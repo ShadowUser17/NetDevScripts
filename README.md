@@ -17,4 +17,5 @@ python3 -m venv --upgrade-deps env && \
 ```
 
 #### URLs:
-- [netmiko](https://github.com/ktbyers/netmiko)
+- [netmiko](https://github.com/ktbyers/netmiko/blob/develop/README.md)
+- [scripting](https://wiki.mikrotik.com/wiki/Manual:Scripting)
