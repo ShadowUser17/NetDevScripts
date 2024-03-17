@@ -18,3 +18,9 @@ class RouterOS:
         "key=val;..." -> ["key=val", ...] -> {key: val, ...}
         '''
         return dict(map(lambda item: item.split("="), output.split(";")))
+
+    @classmethod
+    def parse_as_table(self, output: str) -> list:
+        lines = filter(lambda item: not item.startswith("#"), output.splitlines())
+        lines = filter(lambda item: not item.startswith("Columns"), lines)
+        return list(map(lambda item: tuple(item.split()), lines))
