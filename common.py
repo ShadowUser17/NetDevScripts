@@ -1,4 +1,5 @@
 import os
+import config
 import logging
 
 
@@ -9,6 +10,10 @@ def get_logger() -> logging.Logger:
         datefmt=r'%Y-%m-%d %H:%M:%S', level=log_level
     )
     return logging.getLogger()
+
+
+def get_config(hosts: str = "vm_hosts") -> list:
+    return getattr(config, os.environ.get("HOSTS", hosts))
 
 
 class RouterOS:
